@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cpfifp.core.exception.NoHayEspacioException;
-import com.cpfifp.core.exception.VehiculoYaAparcadoException;
+import com.cpfifp.grijander.parkingfinal.core.exception.NoHayEspacioException;
+import com.cpfifp.grijander.parkingfinal.core.exception.VehiculoYaAparcadoException;
+import com.cpfifp.grijander.parkingfinal.core.service.ParkingService;
 import com.cpfifp.grijander.parkingfinal.ticket.domain.Ticket;
-import com.cpfifp.grijander.parkingfinal.ticket.service.TicketService;
 import com.cpfifp.grijander.parkingfinal.vehiculo.domain.VehiculoDao;
 
 import jakarta.validation.Valid;
 
 @Controller
 public class VehiculoController {
-    private final TicketService service;
+    private final ParkingService service;
 
-    public VehiculoController(final TicketService service) {
+    public VehiculoController(final ParkingService service) {
         this.service = service;
     }
 

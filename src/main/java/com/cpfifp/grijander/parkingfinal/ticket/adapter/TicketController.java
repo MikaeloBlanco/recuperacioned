@@ -7,15 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cpfifp.grijander.parkingfinal.ticket.service.TicketService;
 import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
+import com.cpfifp.grijander.parkingfinal.core.service.ParkingService;
 import com.cpfifp.grijander.parkingfinal.ticket.domain.*;
 
 @Controller
 public class TicketController {
     
-    private TicketService service;
-    public TicketController(TicketService service) {
+    private ParkingService service;
+    public TicketController(ParkingService service) {
         this.service = service;
     }
     @GetMapping("/tickets")

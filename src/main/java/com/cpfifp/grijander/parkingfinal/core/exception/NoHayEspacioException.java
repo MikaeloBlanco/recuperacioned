@@ -1,4 +1,4 @@
-package com.cpfifp.core.exception;
+package com.cpfifp.grijander.parkingfinal.core.exception;
 
 public class NoHayEspacioException extends RuntimeException {
     

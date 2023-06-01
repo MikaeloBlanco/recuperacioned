@@ -1,24 +1,24 @@
-package com.cpfifp.grijander.parkingfinal.ticket.service;
+package com.cpfifp.grijander.parkingfinal.core.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.cpfifp.core.exception.NoHayEspacioException;
-import com.cpfifp.core.exception.VehiculoNoAparcadoException;
-import com.cpfifp.core.exception.VehiculoYaAparcadoException;
+import com.cpfifp.grijander.parkingfinal.core.exception.NoHayEspacioException;
+import com.cpfifp.grijander.parkingfinal.core.exception.VehiculoNoAparcadoException;
+import com.cpfifp.grijander.parkingfinal.core.exception.VehiculoYaAparcadoException;
 import com.cpfifp.grijander.parkingfinal.ticket.domain.Repository;
 import com.cpfifp.grijander.parkingfinal.ticket.domain.Ticket;
 import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
 import com.cpfifp.grijander.parkingfinal.vehiculo.domain.VehiculoDao;
 
 @Service
-public class TicketServiceImpl implements TicketService {
+public class ParkingServiceImpl implements ParkingService {
 
     private final Repository repositorio;
 
 
-    public TicketServiceImpl(int capacidad) {
+    public ParkingServiceImpl(int capacidad) {
         repositorio = new Repository(capacidad);
     }
 

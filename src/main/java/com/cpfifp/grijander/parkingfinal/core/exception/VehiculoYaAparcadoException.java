@@ -1,4 +1,4 @@
-package com.cpfifp.core.exception;
+package com.cpfifp.grijander.parkingfinal.core.exception;
 
 public class VehiculoYaAparcadoException extends RuntimeException {
     
