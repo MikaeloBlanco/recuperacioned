@@ -1,0 +1,20 @@
+package com.cpfifp.grijander.parkingfinal.ticket.service;
+
+import java.util.List;
+
+import com.cpfifp.core.exception.NoHayEspacioException;
+import com.cpfifp.core.exception.VehiculoNoAparcadoException;
+import com.cpfifp.core.exception.VehiculoYaAparcadoException;
+import com.cpfifp.grijander.parkingfinal.ticket.domain.Ticket;
+import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
+import com.cpfifp.grijander.parkingfinal.vehiculo.domain.VehiculoDao;
+
+public interface TicketService {
+    void aparcarVehiculo(String matricula) throws VehiculoYaAparcadoException, NoHayEspacioException ;
+    void aparcarVehiculo(VehiculoDao vehiculo) throws VehiculoYaAparcadoException, NoHayEspacioException ;
+    Ticket sacarVehiculo(Vehiculo vehiculo) throws VehiculoNoAparcadoException;
+    Ticket sacarVehiculo(String matricula) throws VehiculoNoAparcadoException;
+    List<Ticket> obtenerAparcados();
+    List<Vehiculo> obtenerVehiculosFinalizados();
+    List<Ticket> obtenerTicketsFinalizados(String matricula);
+}
