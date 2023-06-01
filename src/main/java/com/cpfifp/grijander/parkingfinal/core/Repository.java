@@ -1,11 +1,14 @@
-package com.cpfifp.grijander.parkingfinal.ticket.domain;
+package com.cpfifp.grijander.parkingfinal.core;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
+import org.springframework.stereotype.Component;
 
+import com.cpfifp.grijander.parkingfinal.ticket.domain.Ticket;
+import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
+@Component
 public class Repository {
 
     private final Map<Vehiculo,List<Ticket>> pasados;
