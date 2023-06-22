@@ -154,7 +154,7 @@ public class CucumberSteps extends CucumberConfiguration {
 
     @Entonces("se muestra el boton de aparcar")
     public void createButtondIsDisplayed() {
-        WebElement button = driver.findElement(By.id("user-create-button-submit"));
+        WebElement button = driver.findElement(By.id("button is-primary"));
         assertAll("Create button",
                 () -> {
                     assertEquals(button.getTagName().toLowerCase(), "button");
@@ -198,10 +198,10 @@ public class CucumberSteps extends CucumberConfiguration {
                 fieldID = "home-title";
                 break;
             case "tabla":
-                fieldID = "table";
+                fieldID = "";
                 break;
             case "input de matricula":
-                fieldID = "control";
+                fieldID = "";
                 break;
         }
         return fieldID;
