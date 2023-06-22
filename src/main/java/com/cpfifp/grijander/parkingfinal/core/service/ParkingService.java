@@ -10,7 +10,7 @@ import com.cpfifp.grijander.parkingfinal.vehiculo.domain.Vehiculo;
 import com.cpfifp.grijander.parkingfinal.vehiculo.domain.VehiculoDao;
 
 public interface ParkingService {
-    void aparcarVehiculo(String matricula) throws VehiculoYaAparcadoException, NoHayEspacioException ;
+    void aparcarVehiculo(String string) throws VehiculoYaAparcadoException, NoHayEspacioException ;
     void aparcarVehiculo(VehiculoDao vehiculo) throws VehiculoYaAparcadoException, NoHayEspacioException ;
     Ticket sacarVehiculo(Vehiculo vehiculo) throws VehiculoNoAparcadoException;
     Ticket sacarVehiculo(String matricula) throws VehiculoNoAparcadoException;
