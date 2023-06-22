@@ -27,7 +27,7 @@ import com.cpfifp.grijander.parkingfinal.vehiculo.domain.VehiculoDao;
 /**
  * @author Miguel Blanco Fernández
  * @since 21/06/2023
- * Tests de la carpeta service Y tests del programa Repository.java
+ * Tests de la carpeta service
  */
 public class ServiceTests {
     private Vehiculo vehiculo;
@@ -47,7 +47,7 @@ public class ServiceTests {
     }
 
     /**
-     * 
+     * Test de aparcar un coche dentro del servicio que comprueba si se ha realizado correctamente
      */
     @Test
     void testAparcarVehiculo() {
@@ -68,7 +68,9 @@ public class ServiceTests {
 
         
     }
-
+    /**
+     * Test de comprobar de que un vehiculo a sido aparcado
+     */
     @Test
     void testVehiculoAparcado() {
         mockedRepository = new Repository(2);
@@ -82,7 +84,9 @@ public class ServiceTests {
         }
         mockedRepository.añadirVehiculoActivo(vehiculo3);
     }
-
+    /**
+     * Test de comprobación que un coche ya se encuentre aparcado
+     */
     @Test
     void testVehiculoYaAparcado(){
         mockedRepository = new Repository(2);
@@ -94,7 +98,9 @@ public class ServiceTests {
             }
         );
     }
-
+    /**
+     * Test de comprobación que no exista espacio alguno para aparcar
+     */
     @Test
     void testNoExisteEspacio(){
         mockedRepository = new Repository(0);
@@ -106,7 +112,9 @@ public class ServiceTests {
             }
         );
     }
-
+    /**
+     * Test de comprobación que un ticket se haya producido al aparcar un vehiculo
+     */
     @Test
     void testObtenerAparcados() {
         final List<Ticket> expected = new ArrayList<>();
@@ -115,7 +123,9 @@ public class ServiceTests {
         final List<Ticket> actual = service.obtenerAparcados();
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un ticket finalizado se haya producido tras sacar un vehiculo
+     */
     @Test
     void testObtenerTicketsFinalizados() {
         mockedRepository.añadirTicketPasado(ticket);
@@ -125,7 +135,9 @@ public class ServiceTests {
         final List<Ticket> actual = service.obtenerTicketsFinalizados(vehiculo3.getMatricula());
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un coche ya se encuentre sacado del parking
+     */
     @Test
     void testObtenerVehiculosFinalizados() {
         mockedRepository.añadirTicketPasado(ticket);
@@ -135,7 +147,9 @@ public class ServiceTests {
         final List<Vehiculo> actual = service.obtenerVehiculosFinalizados();
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un coche se haya sacado del parking
+     */
     @Test
     void testSacarVehiculo() {
         mockedRepository = new Repository(2);
@@ -148,7 +162,9 @@ public class ServiceTests {
             fail();
         }
     }
-
+    /**
+     * Test de comprobación que un coche no se encuentre aparcado dentro del parking
+     */
     @Test
     void testVehiculoNoAparcado(){
         ParkingService service = new ParkingServiceImpl(mockedRepository);

@@ -28,7 +28,9 @@ public class VehiculoTests {
         vehiculo3 = new Vehiculo("0346 UXC", ticket);
         vehiculoDao = new VehiculoDao();
     }
-
+    /**
+     * Test de comprobación que un ticket se haya creado a partir de un coche que se encuentre aparcado
+     */
     @Test
     void testGetTicketActivo(){
         Ticket expected = vehiculo3.getTicketActivo();
@@ -36,7 +38,9 @@ public class VehiculoTests {
 
         assertEquals( expected,actual);
     }
-
+    /**
+     * Test de comprobación que un ticket se haya establecido como activo para un coche dentro del parking
+     */
     @Test
     void testSetTicketActivo(){
         vehiculo2.setTicketActivo(ticket);
@@ -45,7 +49,9 @@ public class VehiculoTests {
 
         assertEquals(expected, actual);
     }
-
+    /**
+     * Test de comprobación que un coche devuelva la matricula
+     */
     @Test
     void testGetMatricula(){
         String expected = vehiculo1.getMatricula();
@@ -53,7 +59,9 @@ public class VehiculoTests {
 
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un coche se le asigne una matricula
+     */
     @Test
     void testSetMatricula(){
         vehiculo2.setMatricula("0241 PME");
@@ -62,7 +70,9 @@ public class VehiculoTests {
 
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un coche se le asigne una matricula en el VehiculoDao
+     */
     @Test
     void testSetMatriculaVD(){
         vehiculoDao.setMatricula("3472 HJC");
@@ -71,7 +81,9 @@ public class VehiculoTests {
 
         assertEquals(expected,actual);
     }
-
+    /**
+     * Test de comprobación que un coche devuelva la matricula en el VehiculoDao
+     */
     @Test
     void testGetMatriculaVD(){
         String expected = vehiculoDao.getMatricula();
